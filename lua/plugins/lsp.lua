@@ -18,10 +18,8 @@ return {
     	config = function()
       	require("mason-lspconfig").setup({
         	ensure_installed = { 
-				"clangd", 
 				"pyright", 
 				"bashls", 
-				"lua_ls", 
 				"asm_lsp",
 				"yamlls",
 			},
@@ -39,7 +37,10 @@ return {
       		lsp.lua_ls.setup{}
 			lsp.asm_lsp.setup{}
 			lsp.yamlls.setup{}
-		end
+		    
+            require("clangd_extensions.inlay_hints").setup_autocmd()
+            require("clangd_extensions.inlay_hints").set_inlay_hints()
+        end
   	},
     {
         "ray-x/lsp_signature.nvim",

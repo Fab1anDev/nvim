@@ -26,7 +26,19 @@ return {
 			vim.opt.completeopt = { "menu", "menuone", "noinsert", "noselect" }
 
 			cmp.setup({
-				window = {
+				sorting = {
+                    comparators = {
+                        cmp.config.compare.offset,
+                        cmp.config.compare.exact,
+                        cmp.config.compare.recently_used,
+                        require("clangd_extensions.cmp_scores"),
+                        cmp.config.compare.kind,
+                        cmp.config.compare.sort_text,
+                        cmp.config.compare.length,
+                        cmp.config.compare.order,
+                    },
+                },
+                window = {
 					completion = {
 						autocomplete = true,
 						col_offset = -3,
@@ -69,7 +81,8 @@ return {
 					{ name = 'spell' },
 					{ name = 'emoji' },
 					{ name = 'treesitter' },
-				}),
+				    { name = 'crates' },
+                }),
 				highlight = {
 					default = "Subtle"
 
