@@ -1,4 +1,31 @@
 return {
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        config = function () 
+            local configs = require("nvim-treesitter.configs")
+
+            configs.setup({
+                ensure_installed = { "c", "lua", "html", "go", "markdown", "markdown_inline" },
+                sync_install = true,
+                highlight = { enable = true },
+                indent = { enable = true },  
+            })
+        end
+
+    },
+    {
+        "jay-babu/mason-null-ls.nvim",
+        dependencies = {
+            "nvimtools/none-ls.nvim"
+        },
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            require("mason-null-ls").setup({
+                ensure_installed = { "pyright", "bashls" }
+            })
+        end
+    },
   	{
     	'williamboman/mason.nvim',
     	config = function()
@@ -20,8 +47,8 @@ return {
         	ensure_installed = { 
 				"pyright", 
 				"bashls", 
-				"asm_lsp",
 				"yamlls",
+                "gopls",
 			},
         	automatic_installation = true,
       	})
@@ -31,16 +58,15 @@ return {
     	'neovim/nvim-lspconfig',
     	config = function()
       		local lsp = require('lspconfig')
-      		lsp.clangd.setup{}
       		lsp.pyright.setup{}
       		lsp.bashls.setup{}
-      		lsp.lua_ls.setup{}
-			lsp.asm_lsp.setup{}
 			lsp.yamlls.setup{}
-		    
+            lsp.gopls.setup{}
+
             require("clangd_extensions.inlay_hints").setup_autocmd()
-            require("clangd_extensions.inlay_hints").set_inlay_hints()
-        end
+            require("clangd_extensions.inlay_hints").set_inlay_hints() 
+            
+       end
   	},
     {
         "ray-x/lsp_signature.nvim",

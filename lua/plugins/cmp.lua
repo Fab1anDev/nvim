@@ -10,7 +10,6 @@ return {
 			'hrsh7th/cmp-calc',
 			'f3fora/cmp-spell',
 			'hrsh7th/cmp-emoji',
-			'ray-x/cmp-treesitter',
 			'saadparwaiz1/cmp_luasnip',
 			'L3MON4D3/LuaSnip',
 
@@ -80,7 +79,6 @@ return {
 					{ name = 'calc' },
 					{ name = 'spell' },
 					{ name = 'emoji' },
-					{ name = 'treesitter' },
 				    { name = 'crates' },
                 }),
 				highlight = {

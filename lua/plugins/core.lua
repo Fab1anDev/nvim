@@ -47,14 +47,11 @@ return {
 					"Linux sucks but *BSD sucks less",
 					"Imagine using Windows/MacOS",
 					"i use neovim, you see?",
-					"Linux is bloated (actually)",
 					"Rust programmer: Rewrite whole universe in Rust",
 					"Rust programmer just using Rust cuz C skill issue's",
-					"Just joking. Rust is good",
 					"best shitty lua guy",
 					"Imagine 2 Onion's. Heck imagine 3 Onion's",
 					"i have Autism",
-					"i don't know a single line lua",
 					"我的地下室里有孩子",
 				}
 		
@@ -99,5 +96,5 @@ return {
 				terminal_text = "Using Terminal",
 			})
 		end
-	}
+	},
 }
