@@ -1,10 +1,10 @@
 return {
 	{
-		"slugbyte/lackluster.nvim",
+		"ellisonleao/gruvbox.nvim",
 		lazy = false,
 		priority = 1000,
 		init = function()
-			vim.cmd.colorscheme("lackluster-hack")
+			vim.cmd.colorscheme("gruvbox")
 		end,
 	},
 	{
@@ -44,7 +44,6 @@ return {
 			
 			local function footer()
 				local text = {
-					"Linux sucks but *BSD sucks less",
 					"Imagine using Windows/MacOS",
 					"i use neovim, you see?",
 					"Rust programmer: Rewrite whole universe in Rust",

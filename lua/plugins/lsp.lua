@@ -49,7 +49,8 @@ return {
 				"bashls", 
 				"yamlls",
                 "gopls",
-			},
+			    "clangd",
+            },
         	automatic_installation = true,
       	})
     end
@@ -62,7 +63,7 @@ return {
       		lsp.bashls.setup{}
 			lsp.yamlls.setup{}
             lsp.gopls.setup{}
-
+            lsp.clangd.setup{}
             require("clangd_extensions.inlay_hints").setup_autocmd()
             require("clangd_extensions.inlay_hints").set_inlay_hints() 
             
